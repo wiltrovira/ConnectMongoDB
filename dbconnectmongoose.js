@@ -5,6 +5,10 @@
  */
 require("dotenv").config(); //Requiere el módulo dotenv para cargar variables de entorno
 
+/**
+ * Este ejemplo se conecta a la base de datos a través de Mongoose (https://mongoosejs.com/)
+ * Permitirá luego crear y validar esquemas en MongoDB. Se recomienda por la facilidad de uso
+ */
 var mongoClient = require("mongoose");
 
 /**
