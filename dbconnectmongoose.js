@@ -1,4 +1,7 @@
 /**
+ * Definición del módulo
+ */
+/**
  * Para ejecutar este módulo, crear un archivo con el nombre ".env"
  * Agregar una línea con la variable
  *          EXAMPLE_MONGODB_CONNSTRING=cadenaConexionMongoDB
@@ -28,7 +31,7 @@ mongoClient.connect(
  */
 function callbackConectarMongoDB(err, db) {
     if (err) {
-        console.log("Error al conectarse: ", err.message);
+        console.log("Error al conectarse a la base de datos: ", err.message);
         return;
     }
 
@@ -36,3 +39,6 @@ function callbackConectarMongoDB(err, db) {
     db.close(); //Cierra la conexión a la base de datos
     console.log("Conexión cerrada con éxito");
 }
+
+// //Exporta la función conectar
+module.exports = mongoClient;

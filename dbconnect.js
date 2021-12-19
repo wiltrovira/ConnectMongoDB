@@ -24,11 +24,16 @@ mongoClient.connect(
  */
 function callbackConectarMongoDB(err, db) {
     if (err) {
-        console.log("Error al conectarse: ", err.message);
-        return;
+        // if (err instanceof MongoServerError) {
+            console.log("Error al conectarse a la base de datos: ", err.message);
+            return;
+        // }
     }
 
     console.log("Conexión a base de datos fue exitosa!!!");
     db.close(); //Cierra la conexión a la base de datos
     console.log("Conexión cerrada con éxito");
 }
+
+// //Exporta la función conectar
+module.exports = mongoClient;
